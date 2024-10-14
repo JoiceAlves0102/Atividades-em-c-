@@ -1,6 +1,8 @@
-﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
-//array
+﻿using System.Transactions;
 
+Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+//array
+percorreArray();
 
 void percorreArray()
 {
@@ -13,12 +15,15 @@ void percorreArray()
 
     Console.WriteLine($"Tamanho do Array {idades.Length}");
 
-    int acumulador = 0;
+    int totalIdades = 0;
 
     for(int i = 0; i < idades.Length; i++)
     {
         int idade = idades[i];
         Console.WriteLine($"Índice [{i}] = {idades[i]}");
-        acumulador++;   
+        totalIdades+=idades[i];   
     }
+    double mediaIdades = (double)totalIdades / idades.Length;
+    Console.WriteLine($"A média das idades é {mediaIdades:F2}");
+
 }
